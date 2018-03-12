@@ -22,7 +22,6 @@
             <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
           <?php endif; ?>
 
-
           <hr>
           <!-- Pager -->
           <div class="clearfix">
