@@ -8,7 +8,7 @@
           <?php
             $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
             $args = array(
-              'posts_per_page' => 1,
+              'posts_per_page' => 7,
               'paged'          => $paged
             );
             $the_query = new WP_Query( $args );
