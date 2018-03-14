@@ -59,8 +59,14 @@
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="site-heading">
-              <h1><?php echo get_bloginfo( 'name' ); ?></h1>
-              <span class="subheading"><?php echo get_bloginfo( 'description' ); ?></span>
+              <?php if ( is_front_page() && is_home() ) { ?>
+                <h1><?php echo get_bloginfo( 'name' ); ?></h1>
+                <span class="subheading"><?php echo get_bloginfo( 'description' ); ?></span>
+              <?php } else { ?>
+                <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+                    <h1><?php the_title(); ?></h1>
+                <?php endwhile; endif; ?>
+              <?php } ?>
             </div>
           </div>
         </div>
