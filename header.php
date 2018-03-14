@@ -25,7 +25,7 @@
           <i class="fa fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
+          <!-- <ul class="navbar-nav ml-auto">
             <li class="nav-item">
               <a class="nav-link" href="index.html">Home</a>
             </li>
@@ -38,7 +38,16 @@
             <li class="nav-item">
               <a class="nav-link" href="contact.html">Contact</a>
             </li>
-          </ul>
+          </ul> -->
+            <?php
+              $defaults = array(
+                'menu'  => 'header-menu',
+                'container' => 'ul',
+                'theme_location' => 'primary-menu',
+                'menu_class'  => 'navbar-nav ml-auto'
+              );
+              wp_nav_menu( $defaults );
+            ?>
         </div>
       </div>
     </nav>

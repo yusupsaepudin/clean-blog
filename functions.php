@@ -10,6 +10,16 @@ function cleanblog_enqueue_style() {
 }
 add_action('wp_enqueue_scripts', 'cleanblog_enqueue_style');
 
+// MENU FUNCTION
+function register_theme_menus(){
+    register_nav_menus(
+        array(
+            'primary-menu' => __( 'Primary Menu' )
+        )
+    );
+}
+add_action( 'init', 'register_theme_menus' );
+
 
 // ADD CLASS TO PAGINATION LINK
 add_filter('next_posts_link_attributes', 'posts_link_attributes_1');
@@ -21,3 +31,11 @@ function posts_link_attributes_1() {
 function posts_link_attributes_2() {
     return 'class="btn btn-primary float-left"';
 }
+
+
+// ADD CLASS TO <li> tag
+function add_classes_on_li($classes, $item, $args) {
+  $classes[] = 'nav-item';
+  return $classes;
+}
+add_filter('nav_menu_css_class','add_classes_on_li',1,3);
