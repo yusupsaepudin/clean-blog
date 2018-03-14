@@ -11,7 +11,6 @@ function cleanblog_enqueue_style() {
 add_action('wp_enqueue_scripts', 'cleanblog_enqueue_style');
 
 
-
 // ADD CLASS TO PAGINATION LINK
 add_filter('next_posts_link_attributes', 'posts_link_attributes_1');
 add_filter('previous_posts_link_attributes', 'posts_link_attributes_2');
